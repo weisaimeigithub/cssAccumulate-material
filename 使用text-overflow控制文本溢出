@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bruce flex-ct-y" data-title="使用text-overflow控制溢出文本">
+      <p class="ellipsis-text s-line sl-ellipsis">CSS非常有趣和搞怪，可以做一些JS也能做的事情</p>
+      <p class="ellipsis-text m-line ml-ellipsis">层叠样式表(CSS)是一种用来表现HTML(标准通用标记语言的一个应用)或XML(标准通用标记语言的一个子集)等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
+      <p class="ellipsis-text m-line mls-ellipsis">层叠样式表(CSS)是一种用来表现HTML(标准通用标记语言的一个应用)或XML(标准通用标记语言的一个子集)等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
+    </div>
+  </body>
+  <style>
+     .ellipsis-text{
+        width: 400px;
+        text-align: justify;
+        font-size: 20px;
+
+        /* 第三行变成了最后一行字收缩进来了 */
+        line-height: 30px;
+     }
+
+     .s-line{
+        /* 固定格式 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+     }
+
+     .ml-ellipsis{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* white-space: nowrap; */
+        /* max-height: 90px; 展示高度的不在这里*/
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+     }
+
+     .mls-ellipsis{
+        position: relative;
+        /* 以下的两个东西出来的效果是一个样子 */
+        overflow: hidden;
+        max-height:90px;
+     }
+     .mls-ellipsis::after{
+         background: linear-gradient(to right,transparent,#fff 50%);
+         content: '...';
+         position: absolute;
+         right:0;
+         bottom: 0;
+         padding-left: 40px;
+     }
+  </style>
+</html>
