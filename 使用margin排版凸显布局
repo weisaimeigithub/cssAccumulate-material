@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>頁面展示</title>
+</head>
+<body>
+    <div class="bruce flex-ct-y" data-title="使用margin排版凸显布局">
+        <ul class="highlight-list left">
+            <li>Alibaba</li>
+            <li>Tencent</li>
+            <li>Baidu</li>
+            <li>Jingdong</li>
+            <li>Ant</li>
+            <li>Netease</li>
+        </ul>
+        <ul class="highlight-list right">
+            <li>Alibaba</li>
+            <li>Tencent</li>
+            <li>Baidu</li>
+            <li>Jingdong</li>
+            <li>Ant</li>
+            <li>Netease</li>
+        </ul>
+    </div>
+</body>
+<style>
+    .highlight-list{
+        list-style: none;
+        display: flex;
+        width: 600px;
+        height: 60px;
+        background: #33cc99;
+        align-items: center;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .highlight-list li{
+        font-size: 16px;
+        color: #fff;
+        padding: 0px 10px;
+        line-height: 40px;
+        height: 40px;
+    }
+
+    .highlight-list.left li + li {
+        /* 带有加号才可以 */
+         margin-left: 10px;
+     }
+   
+     .highlight-list.left li:last-child {
+         margin-left: auto;
+     }
+    
+     .highlight-list.right li + li {
+        /* 带有加号才可以 */
+         margin-left: 10px;
+     }
+   
+     .highlight-list.right li:first-child {
+         margin-right: auto;
+     }
+
+    /* 写代码按照自己的逻辑来，然后一点一点的添加相关的属性来进行修改 */
+</style>
+</html>
