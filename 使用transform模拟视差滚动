@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <div class="bruce" data-title="使用transform模拟视差滚动">
+       <ul class="parallax-scrolling">
+          <li>translateZ(-1px)</li>
+          <li>translateZ(-2px)</li>
+          <li>translateZ(-3px)</li>
+       </ul>
+       <p>内容</p>
+       <ul class="parallax-scrolling">
+        <li>translateZ(-1px)</li>
+        <li>translateZ(-2px)</li>
+        <li>translateZ(-3px)</li>
+       </ul>
+   </div>
+</body>
+<style>
+   .bruce{
+     /* hidden:裁剪内容 - 不提供滚动机制  auto:如果溢出框，则应该提供滚动机制 */
+     overflow-x: hidden;
+     overflow-y: auto;
+     /* 元素距离视图的距离，以像素计 */
+     perspective: 1px;
+     /* 子元素将保留其3D位置 */
+     transform-style:preserve-3d;
+   }
+
+   .bruce p{
+      height: 300px;
+      line-height: 300px;
+      text-align: center;
+      font-size: 20px;
+      color: #f66;
+   }
+
+   .parallax-scrolling{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1000px;
+      background: url("https://static.yangzw.vip/codepen/lake.jpg") no-repeat center fixed;
+   }
+
+   li{
+     width: 500px;
+     text-align: center;
+     font-weight: bold;
+     font-size: 60px;
+   }
+
+   li:nth-child(1){
+     color: #09f;
+     transform:translateZ(1px)
+   }
+
+   li:nth-child(2){
+     color: #f66;
+     transform:translateZ(2px)
+   }
+
+   li:nth-child(3){
+     color: #3c9;
+     transform:translateZ(3px)
+   }
+</style>
+</html>
