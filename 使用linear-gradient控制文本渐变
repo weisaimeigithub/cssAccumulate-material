@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div class="bruce"  data-title="使用linear-gradient控制渐变文本">
+       <div class="gradient-text">Full Stack Developer</div>
+    </div>
+</body>
+  <style>
+     .gradient-text{
+        background-image:linear-gradient(90deg,#f66,#f90);
+        /* 剪裁就是将整个背景色剪裁成文字形状 */
+        background-clip: text;
+        -webkit-background-clip: text;
+        line-height: 60px;
+        font-size: 60px;
+        color: transparent;
+        animation: hue 5s linear infinite;
+     }
+
+     @keyframes hue{
+        from{
+           filter: hue-rotate(0);
+        }
+
+        to{
+           filter: hue-rotate(-1turn);
+        }
+     }
+  </style>
+</html>
