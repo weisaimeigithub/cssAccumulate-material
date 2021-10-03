@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="bruce flex-ct-x"  data-title="使用animation-delay保留动画首帧">
+    <ul class="initial-keyframe">
+       <li></li>
+       <li></li>
+       <li></li>
+    </ul>
+  </div>
+</body>
+<style>
+    .initial-keyframe{
+       position: relative;
+       width: 100px;
+       height: 100px;
+       padding: 0 ;
+       list-style: none;
+       margin-left: 60px;
+       margin-top: 70px;
+    }
+
+    .initial-keyframe li{
+       position: absolute;
+       border-radius: 100%;
+       width: 100%;
+       height: 100%;
+       background-color: #3c9;
+       /* 动起来 */
+       transform: rotate(0)  translate(-80px,0);
+       animation: rotate 3s linear infinite;
+    }
+
+    li:nth-child(2){
+      /* 滚动延迟时间 */
+       animation-delay: -1s;
+    }
+
+    li:nth-child(3){
+      animation-delay: -2s;
+    }
+
+    @keyframes rotate{
+       to{
+         transform: rotate(1turn)
+         translate(-80px,0)
+       }
+    }
+</style>
+</html>
