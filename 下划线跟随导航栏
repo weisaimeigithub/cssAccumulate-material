@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bruce  flex-ct-x"  data-title="下划线跟随导航栏">
+        <ul class="underline-navbar">
+            <li>Alibaba阿里巴巴</li>
+            <li>Tecent腾讯</li>
+            <li>Baidu百度</li>
+            <li>Jingdong京东</li>
+            <li>Ant蚂蚁金服</li>
+            <li>Netease网易</li>
+        </ul>
+    </div>
+</body>
+<style>
+    ul{
+        display: flex;
+        list-style: none;
+    }
+
+    li{
+        /* position: relative 这个得加上，li:before才能position 有显示出来 */
+        position: relative;
+        padding: 10px;
+        font-size: 20px;
+        color: #09f;
+        cursor: pointer;
+    }
+
+    li::before{
+        border-bottom: 2px solid #09f;
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 100%;
+        left: 100%;
+        transition: 0.2s all linear;
+    }
+
+    li:hover::before{
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+        border-bottom-color: #09f;
+        transition-delay: 100ms;
+    }
+</style>
+</html>
